@@ -87,7 +87,7 @@ int main() {
                 char buffer = -1;
                 int bytes = recv(socket, &buffer, 1, 0);
                 if (bytes <= 0) {
-                    printf("Client <%s:%d> Failure\n", inet_ntoa(sockAddr.sin_addr), ntohs(sockAddr.sin_port));
+                    printf("Disconnected: Client <%s:%d>\n", inet_ntoa(sockAddr.sin_addr), ntohs(sockAddr.sin_port));
                     close(ufds[i].fd);
                     ufds[i].fd = -1;
                     num_clients--;
